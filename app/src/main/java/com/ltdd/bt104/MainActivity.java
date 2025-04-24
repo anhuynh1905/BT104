@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin    = findViewById(R.id.btnLogin);
         tvRegister  = findViewById(R.id.tvRegister);
 
-        apiService = RetrofitClient.getInstance().create(ApiService.class);
+        apiService = RetrofitClient.getInstance(this).create(ApiService.class);
         session    = new SessionManager(this);
 
         btnLogin.setOnClickListener(view -> {

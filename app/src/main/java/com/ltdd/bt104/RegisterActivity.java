@@ -1,5 +1,6 @@
 package com.ltdd.bt104;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -34,14 +35,14 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etFullName   = findViewById(R.id.etFullName);
+        etFullName   = findViewById(R.id.tilFullName);
         etUsername   = findViewById(R.id.etUsername);
         etEmail      = findViewById(R.id.etEmail);
         etPassword   = findViewById(R.id.etPassword);
         btnRegister  = findViewById(R.id.btnRegister);
         tvLoginLink  = findViewById(R.id.tvLoginLink);
 
-        apiService = RetrofitClient.getInstance().create(ApiService.class);
+        apiService = RetrofitClient.getInstance(this).create(ApiService.class);
 
         btnRegister.setOnClickListener(v -> {
             String fullName = etFullName.getText().toString().trim();

@@ -35,7 +35,7 @@ public class MediaDetailActivity extends AppCompatActivity {
         tvDescription = findViewById(R.id.tvDescription);
 
         session    = new SessionManager(this);
-        apiService = RetrofitClient.getInstance().create(ApiService.class);
+        apiService = RetrofitClient.getInstance(this).create(ApiService.class);
 
         mediaId = getIntent().getLongExtra("media_id", -1);
         if (mediaId == -1) {
